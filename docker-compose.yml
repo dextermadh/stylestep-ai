@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stylestep_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - ENVIRONMENT=development
+      - PORT=8000
+    depends_on:
+      - db
+
+  frontend:
+    # Need to run via host or specific Dockerfile inside frontend dir later
+    image: node:20-alpine
+    container_name: stylestep_frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    tty: true
+
+  db:
+    image: postgres:15-alpine
+    container_name: stylestep_db
+    environment:
+      POSTGRES_USER: styleuser
+      POSTGRES_PASSWORD: stylepassword
+      POSTGRES_DB: stylestep
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

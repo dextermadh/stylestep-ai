@@ -1,0 +1,9 @@
+ultralytics
+segment-anything-fast
+scikit-learn
+opencv-python
+colormath
+matplotlib
+jupyterlab
+numpy
+pillow

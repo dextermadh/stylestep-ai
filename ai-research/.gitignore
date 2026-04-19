@@ -1,0 +1,16 @@
+# Data and Models
+data/
+models/
+*.pt
+*.pth
+*.weights
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints
