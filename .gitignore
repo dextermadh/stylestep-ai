@@ -1,1 +1,11 @@
 /frontend/node_modules
+/backend/app/__pycache__
+/backend/app/api/__pycache__
+/backend/app/api/v1/__pycache__
+/backend/app/api/v1/endpoints/__pycache__
+/backend/app/core/__pycache__
+/backend/app/schemas/__pycache__
+/backend/app/services/__pycache__
+backend/.env
+backend/.env
+backend/.env
